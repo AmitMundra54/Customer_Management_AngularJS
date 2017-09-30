@@ -1,0 +1,64 @@
+
+<div ng-controller="userCtrl" ng-cloak>
+
+   <md-content layout-align="center center" style="height:100%;">
+   <md-input-container style="float:right;" >
+				<input type="text" list="list" placeholder="Enter user name" ng-model="selecteduser">
+					<datalist id="list">
+						<option ng-repeat="user in users" value="{{user.name}}"></option>
+					</datalist>
+				</input>
+			</md-input-container>
+   	 <md-tabs style="min-height: 100vh" md-selected="data.selectedIndex" md-align-tabs="{{data.bottom ? 'bottom' : 'top'}}">
+
+      <md-tab id="tab1" flex layout="column" >
+        <md-tab-label>Card View</md-tab-label>
+        <md-tab-body layout="column" >
+        <div layout="row" layout-sm="column" layout-wrap>
+          <md-card flex="19" ng-repeat="user in users" class="login-header">
+        <md-card-header>
+          <md-card-avatar>
+            <img ng-click="showUserDetail(null,user)" class="md-user-avatar" src="assets/images/download.png"/>
+          </md-card-avatar>
+          <md-card-header-text>
+            <span class="md-title" ng-click="userInfo(user)">{{user.name}}</span>
+            <span class="md-subhead">{{user.city + "," + user.state}}</span>
+          </md-card-header-text>
+        </md-card-header>
+        <md-card-title>
+          <md-card-title-text>
+            <span class="md-headline">{{user.orderNo}}</span>
+            <span class="md-subhead">{{user.gender}}</span>
+          </md-card-title-text>
+        </md-card-title>
+        <md-card-content>
+          <p>
+            some note for user
+          </p>
+        </md-card-content>
+        </md-card>
+        </div>
+          <md-button style="float:right;" ng-click="AddCustomer($event)" class="md-primary md-raised">Add User</md-button>
+        </md-tab-body>
+      </md-tab>
+
+      <md-tab id="tab2">
+        <md-tab-label>{{data.secondLabel}}</md-tab-label>
+        <md-tab-body>
+          <md-list>
+         <md-list-item ng-repeat="user in users" md-ink-ripple="#FF0000">
+    		<img ng-click="showUserDetail(null,user)" alt="{{ user.name }}" ng-src="assets/images/download.png" class="md-avatar"/>
+   			 <p>{{ user.name }}</p>
+    		<md-checkbox class="md-secondary" ng-model="person.selected"></md-checkbox>{{person}}
+    		<img ng-src="assets/images/icons/ic_delete_black_18px.svg" tooltip="delete" ng-click="deleteUser($event, user)" aria-label="delete user" class="md-secondary md-hue-3" ></img>
+    		<img class="md-secondary" ng-click="EditUser($event, user)" tooltip="Edit" aria-label="Chat" ng-src="assets/images/icons/ic_message_black_18px.svg"></img>
+  		</md-list-item>
+          </md-list>
+          <div>
+            <md-button style="float:right;" ng-click="AddCustomer($event)" class="md-primary md-raised">Add User</md-button>
+			</div>
+        </md-tab-body>
+      </md-tab>
+     </md-tabs>
+  </md-content>
+</div>

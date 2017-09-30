@@ -1,0 +1,9 @@
+<div>
+<md-input-container style="float:right;" >
+        <input type="text" list="list" placeholder="Enter Choice For Type To Work With" ng-model="selecteduser">
+          <datalist id="list">
+            <option ng-repeat="type in catagories" value="{{type}}"></option>
+          </datalist>
+        </input>
+</md-input-container>
+</div>

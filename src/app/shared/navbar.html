@@ -1,0 +1,25 @@
+<div ng-controller="navbarCtrl" ng-cloak>
+  <md-content>
+  <br>
+    <md-toolbar class="md-hue-2">
+      <div class="md-toolbar-tools">
+        <md-button class="md-icon-button" style="background-color:darkblue;" aria-label="Settings" ng-disabled="false" class="image">
+         <img src="assets/images/download.png">
+        </md-button>
+
+        <h2 flex md-truncate>{{ title }}</h2>
+
+        <md-button href="http://localhost:8080/#!/home/" style="background-color:darkblue;" >
+         Home
+        </md-button>
+
+        <md-button href="http://localhost:8080/#!/user/" ng-click="userCall()" style="background-color:darkblue;">
+Users        </md-button>
+    <md-button href="http://localhost:8080/#!/register/" style="background-color:darkblue;">
+Register        </md-button>
+<md-button href="http://localhost:8080/#!/about/" style="background-color:darkblue;">
+About        </md-button>
+      </div>
+    </md-toolbar>
+  </md-content>
+</div>

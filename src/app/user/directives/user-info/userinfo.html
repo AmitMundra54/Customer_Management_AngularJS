@@ -1,0 +1,9 @@
+<md-card>
+    <md-content>
+        <md-card layout-align="center center" style="float:right;"><a href="http://localhost:8080/#!/homepage" ng-click="closedialog()" class="md-primary md-raised">More Info About {{items.name}}</a></md-card>
+        <md-card-header style="font-size:25px;font-color:######">HELLO {{customer.name}}</md-card-header>
+        <md-card-content>
+            <h1 ng-repeat="(key,value) in customer">{{key}} : {{value}}</h1>
+        </md-card-content>
+    </md-content>
+</md-card>

@@ -1,0 +1,14 @@
+<div class="md-primary">
+        <md-dialog layout-padding>
+            <h2>Edit {{user.name}}</h2>
+            <md-input-container>
+                <label>name</label>
+                <input placeholder="change name" ng-model="user.name"/>
+            </md-input-container>
+            <md-input-container>
+            <label>City</label>
+            <input placeholder="change city" ng-model="user.city">
+          </md-input-container>
+            <md-button ng-click="editUser();closeDialog();" class="md-primary md-raised">Edit me</md-button>
+        </md-dialog>
+</div>

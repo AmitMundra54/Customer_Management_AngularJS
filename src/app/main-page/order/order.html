@@ -1,0 +1,32 @@
+<legend>All Orders</legend>
+<div style="overflow-x:auto;" layout-wrap ng-repeat="data in tableData">
+      <table style="table-layout:fixed" ng-repeat="data in data.parameters track by $index">
+          <legend>{{data.name}}</legend>
+         <tr ng-if="$index==0" class="md-padding" layout-wrap>
+            <th style="overflow:hidden;" class="md-padding" ng-repeat="(key, value) in data">{{key}}</th>
+         </tr>
+         <tr  layout-wrap>
+            <td style="overflow:hidden;" class="md-padding" ng-repeat="(key, value) in data">{{value}}</td>
+         </tr>
+      </table>
+</div>
+
+<style>
+
+table {
+    width:100%;
+    border: 1px solid black;
+}
+
+th,td {
+    font-color: red
+    padding: 5px;
+    height: 10px;
+    text-align: left;
+    border: 1px solid blue;
+}
+tr:nth-child(odd) {background-color: #f2f2f2}
+tr:nth-child(even) {background-color: orange}
+
+
+</style>
